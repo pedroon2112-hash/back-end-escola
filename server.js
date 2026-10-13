@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const DB_FILE = path.join(__dirname, 'db.json');
 
@@ -15,7 +15,8 @@ const DB_FILE = path.join(__dirname, 'db.json');
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static(__dirname));
+app.get('/style.css', (req, res) => res.sendFile(path.join(__dirname, 'style.css')));
+app.get('/script.js', (req, res) => res.sendFile(path.join(__dirname, 'script.js')));
 
 
 app.get('/', (req, res) => {
