@@ -1,0 +1,22 @@
+{
+  "alunos": [
+    {
+      "id": 4,
+      "nome": "teste",
+      "email": "teste@example.com",
+      "curso": "Ciência da Computação"
+    },
+    {
+      "id": 5,
+      "nome": "TESTE",
+      "email": "teste@example.com",
+      "curso": "Engenharia de Software"
+    },
+    {
+      "id": 6,
+      "nome": "Mariana Gosta de Jiló",
+      "email": "marianajilo123@gmail.com",
+      "curso": "Análise de Sistemas"
+    }
+  ]
+}

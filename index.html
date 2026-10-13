@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Painel de Alunos</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Painel de Alunos</h1>
+
+            <p>Demonstração de CRUD Frontend/Backend (Node.js)</p>
+
+            <button
+                onclick="window.print()"
+                style="
+                    margin-top: 1rem;
+                    padding: 10px 20px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    border-radius: 8px;
+                    border: none;
+                    background: white;
+                    color: var(--primary-color);
+                "
+            >
+                ⬇️ Baixar PDF
+            </button>
+        </header>
+
+
+        <main>
+
+            <!-- FORMULÁRIO -->
+            <section class="form-section">
+
+                <h2>Novo Aluno</h2>
+
+                <form id="aluno-form">
+
+                    <!-- ID usado na edição -->
+                    <input type="hidden" id="aluno-id">
+
+
+                    <div class="input-group">
+
+                        <label for="nome">
+                            Nome Completo
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            required
+                            placeholder="Ex: Fulano de Tal"
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="email">
+                            E-mail
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            required
+                            placeholder="Ex: email@email.com"
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="curso">
+                            Curso
+                        </label>
+
+                        <select id="curso" required>
+
+                            <option value="">
+                                Selecione um curso...
+                            </option>
+
+                            <option value="Análise de Sistemas">
+                                Análise de Sistemas
+                            </option>
+
+                            <option value="Engenharia de Software">
+                                Engenharia de Software
+                            </option>
+
+                            <option value="Ciência da Computação">
+                                Ciência da Computação
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="input-group"><label for="cpf">CPF</label><input id="cpf" type="text" inputmode="numeric" maxlength="14" placeholder="000.000.000-00" required></div>
+                    <div class="input-group"><label for="telefone">Telefone</label><input id="telefone" type="tel" inputmode="tel" maxlength="15" placeholder="(62) 99999-9999" required></div>
+                    <div class="input-group"><label for="idade">Idade</label><input id="idade" type="number" min="0" max="120" placeholder="Idade em anos" required></div>
+
+                    <div class="form-actions">
+
+                        <button
+                            type="button"
+                            class="btn-cancel"
+                            id="btn-cancel"
+                            style="display: none;"
+                        >
+                            Cancelar Edição
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="btn-save"
+                            id="btn-save"
+                        >
+                            Salvar Aluno
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- LISTA DE ALUNOS -->
+            <section class="list-section">
+
+                <h2>Alunos Cadastrados</h2>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>ID</th>
+
+                                <th>Nome</th>
+
+                                <th>E-mail</th>
+
+                                <th>Curso</th><th>CPF</th><th>Telefone</th><th>Idade</th>
+
+                                <th>Ações</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="alunos-tbody">
+
+                            <!--
+                                Os alunos serão inseridos
+                                aqui pelo script.js
+                            -->
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- IMPORTANTE: carrega o JavaScript -->
+    <script src="/script.js"></script>
+
+</body>
+
+</html>
